@@ -1,0 +1,14 @@
+# Editorconfig with 4 spaced tabs and standard typescript style
+[*]
+indent_style = space
+indent_size = 4
+charset = utf-8
+end_of_line = lf
+trim_trainling_whitespace = true
+max_line_lenth = 100
+
+[*.json]
+indent_size = 2
+
+
+
