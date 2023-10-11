@@ -45,7 +45,7 @@ async function set_val(collection: Collection, key: string, value: string) : Pro
 }
 
 function usage() {
-    console.log("Usage: node main.js --get <key> | --set <key> <value> | --list");
+    console.log("Usage: node main.js --get <key> | --set <key> <value> | --list | --watch");
 }
 
 function xor(a: boolean, b: boolean) {
