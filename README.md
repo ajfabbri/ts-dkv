@@ -2,6 +2,48 @@
 
 This is a toy application I created to learn the ditto.live SDK and Typescript.
 
+## Building
+
+```
+node run build
+```
+See also *Setup* section below.
+
+## Running
+
+```
+Usage: node main.js --get <key> | --set <key> <value> | --list | --watch
+```
+
+e.g. To watch changes made to the DKV by other peers:
+
+```
+node src/main.js --watch
+```
+
+This will print changes to the DKV as they are made by other clients.
+Hit Ctrl-C to exit.
+
+```
+node src/main.js --set dog "Very cute, but crazy."
+```
+
+This sets the value for key "dog" to "Very cute, but crazy."
+
+```
+node src/main.js --get cat
+```
+
+This will output the value associated with the key "cat", if any.
+
+```
+node src/main.js --list
+```
+
+This will list all key, value pairs in the DKV.
+
+## Setup
+
 You'll need to define the following environment variables:
 
 | | |
