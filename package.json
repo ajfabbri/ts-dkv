@@ -5,16 +5,17 @@
     "main": "main.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "tsc"
+        "build": "npx tsc",
+        "start": "node src/main.js"
     },
     "dependencies": {
-        "@dittolive/ditto": "^4.4.2",
+        "@dittolive/ditto": "^4.5.0",
         "minimist": ">=1.2.6"
     },
     "devDependencies": {
         "@types/node": "^20.8.4",
         "tsc": "^2.0.4",
-        "typescript": "^5.2.2"
+        "typescript": "^5.3.3"
     },
     "prettier": {
         "singleQuote": true,

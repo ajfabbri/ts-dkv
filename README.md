@@ -2,48 +2,49 @@
 
 This is a toy application I created to learn the ditto.live SDK and Typescript.
 
-## Building
+### Set Up
 
 ```
-node run build
+npm install
+npm run build
 ```
-See also *Setup* section below.
 
-## Running
+### Usage
 
 ```
-Usage: node main.js --get <key> | --set <key> <value> | --list | --watch
+main.ts --get <key> | --set <key> <value> | --list | --watch
 ```
 
 e.g. To watch changes made to the DKV by other peers:
 
 ```
-node src/main.js --watch
+npm start --watch
 ```
 
 This will print changes to the DKV as they are made by other clients.
 Hit Ctrl-C to exit.
 
 ```
-node src/main.js --set dog "Very cute, but crazy."
+npm start --set dog "Very cute, but crazy."
 ```
 
 This sets the value for key "dog" to "Very cute, but crazy."
 
 ```
-node src/main.js --get cat
+npm start --get cat
 ```
 
 This will output the value associated with the key "cat", if any.
 
 ```
-node src/main.js --list
+npm start --list
 ```
 
 This will list all key, value pairs in the DKV.
 
 ## Setup
 
+### Configuration
 You'll need to define the following environment variables:
 
 | | |
@@ -52,6 +53,22 @@ You'll need to define the following environment variables:
 | DITTO\_PG\_TOKEN | Playground token |
 
 See [ditto.live onboarding](https://docs.ditto.live/onboarding) for details on how to get these values.
+
+### Ditto SDK from source
+
+If you want to use a locally-built Ditto SDK package, follow the instructions
+in ditto/js/README.md to build it, then use `npm link <path to ditto dist>` to
+use it here. E.g.:
+
+```
+cd ditto/js                     # See readme here on prereqs.
+npm install
+variants=node npx jake dist
+cd ../../ts-dkv                 # Your path may differ.
+npm install
+npm link ../ditto/js/dist       # so fix that afterward.
+npm start
+```
 
 ## Tips
 I'm using direnv to automatically load [.envrc](./.envrc), which will source
